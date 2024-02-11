@@ -19,7 +19,7 @@ function talk() {
   return 'I am ${this.name}
 }
 const me = { name: 'Jane' ｝
-const meTalk = talk.bind(me)
+const meTalk = talk.bind(me) // bind "this" here to (me)
 meTalk() // "I am Jane"
 
 
