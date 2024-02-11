@@ -15,4 +15,11 @@ mocking() // === window.mocking()
 
 
 
+function talk() {
+  return 'I am ${this.name}
+}
+const me = { name: 'Jane' ｝
+const meTalk = talk.bind(me)
+meTalk() // "I am Jane"
+
 
