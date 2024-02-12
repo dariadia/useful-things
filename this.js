@@ -25,3 +25,15 @@ meTalk() // "I am Jane"
 talk.call(me, ...arrayArgs) // call this function with var = this, so === "I am Jane"
 talk.apply(me, [arg1, arg2]) // same as above, different syntax
 
+
+function Person(name) {
+  this.name = name
+  this.talk = function() {
+  console.log(1, this)
+｝
+setTimeout(function() {
+  console.log(2, this)
+}
+const simon = new Person("Simon")
+// 1, { name: Simon }
+// 2, Window. Because callback functions are run in another context.
