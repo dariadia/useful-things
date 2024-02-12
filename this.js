@@ -26,6 +26,7 @@ talk.call(me, ...arrayArgs) // call this function with var = this, so === "I am 
 talk.apply(me, [arg1, arg2]) // same as above, different syntax
 
 
+
 function Person(name) {
   this.name = name
   this.talk = function() {
@@ -37,3 +38,4 @@ setTimeout(function() {
 const simon = new Person("Simon")
 // 1, { name: Simon }
 // 2, Window. Because callback functions are run in another context.
+// To fix: bind, or arrow func
