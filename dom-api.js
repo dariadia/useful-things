@@ -10,5 +10,17 @@ depending on where it is located. This article explores
 when difficulties can occur, and looks at what 
 can be done to mitigate resulting problems.
 
-
 */
+
+// Methods
+
+document.getElementById("my-id") // Find an element by element id
+document.getElementsByTagName("a")	// Find elements by tag name
+document.getElementsByClassName("my-class")	// Find elements by class name
+
+// Changing HTML
+const element = document.getElementById("my-id")
+element.innerHTML =  "My new text" // new html content	Change the inner HTML of an element
+element.attribute = // new value	Change the attribute value of an HTML element
+element.style.property = // new style	Change the style of an HTML element
+element.setAttribute(attribute, value)	// Change the attribute value of an HTML element
