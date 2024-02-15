@@ -14,13 +14,25 @@ can be done to mitigate resulting problems.
 
 // Methods
 
-document.getElementById("my-id") // Find an element by element id
+// Find an element by element id
+document.getElementById("my-id") 
+document.querySelector('#my-id')
+
 document.getElementsByTagName("a")	// Find elements by tag name
-document.getElementsByClassName("my-class")	// Find elements by class name
+
+// Find elements by class name
+document.getElementsByClassName("my-class")
+document.querySelector('.my-class')
+
+const div1 = document.getElementById("div1")
+// => <div id="div1">Hi Champ!</div>
+const attr1 = div1.getAttribute("id") // div1
+
 
 // Changing HTML
-const element = document.getElementById("my-id")
-element.innerHTML =  "My new text" // new html content	Change the inner HTML of an element
-element.attribute = // new value	Change the attribute value of an HTML element
-element.style.property = // new style	Change the style of an HTML element
+
+
+element.innerHTML =  "My new text" // Change the inner HTML of an element
+element.attribute = // Change the attribute value of an HTML element
+element.style.property = // Change the style of an HTML element
 element.setAttribute(attribute, value)	// Change the attribute value of an HTML element
