@@ -43,7 +43,17 @@ element.innerHTML =  "My new text" // Change the inner HTML of an element
 document.getElementById("my-image").src = "landscape.jpg"
 element.setAttribute(attribute, value) // Change the attribute value of an HTML element
 element.setAttribute("style", "color:red")
+document.getElementById("div1").style.color = "blue"
 
 // GOTCHA: Never use document.write() after the document is loaded. It will overwrite the document.
 document.write(new Date()) can be used to write directly to the HTML output stream:
 
+
+
+// Events
+element.addEventListener("click", function() { alert("Hello World!") })
+
+// The addEventListener() method allows you to add many events 
+// to the same element, without overwriting existing events:
+element.addEventListener("click", myFunction)
+element.addEventListener("click", mySecondFunction)
