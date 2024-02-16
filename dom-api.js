@@ -75,3 +75,16 @@ With the addEventListener() method you can specify the propagation type by using
 element.addEventListener(event, function, useCapture)
 document.getElementById("my-div").addEventListener("click", myFunction, true)
 
+/* Nodes
+Navigating Between Nodes: 
+- parentNode
+- childNodes[nodenumber]
+- firstChild
+- lastChild
+- nextSibling
+- previousSibling 
+*/
+
+<h1 id="id01">My First Page</h1>
+document.getElementById("demo").childNodes[0].nodeValue
+document.getElementById("id01").nodeName // => H1
