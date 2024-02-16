@@ -57,3 +57,21 @@ element.addEventListener("click", function() { alert("Hello World!") })
 // to the same element, without overwriting existing events:
 element.addEventListener("click", myFunction)
 element.addEventListener("click", mySecondFunction)
+
+/* Event Bubbling & Event Capturing
+There are 2 event propagation ways in the HTML DOM: bubbling and capturing.
+
+Event propagation is a way of defining the element order when an event occurs. 
+If you have a <p> element inside a <div> element, and the user clicks on the <p> element:
+- in bubbling the inner most element's event is handled first and then the outer: 
+the <p> element's click event is handled first, then the <div> element's click event.
+- in capturing the outer most element's event is handled first and then the inner: 
+the <div> element's click event will be handled first, then the <p> element's click event.
+
+With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter: 
+
+*/
+
+element.addEventListener(event, function, useCapture)
+document.getElementById("my-div").addEventListener("click", myFunction, true)
+
