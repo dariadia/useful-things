@@ -116,3 +116,20 @@ element.insertBefore(para, child)
 // removing elements
 // GOTCHA: remove() doesn't work in older browsers, use removeChild() instead.
 element.remove()
+child.parentNode.removeChild(child)
+
+/* HTMLCollection VS NodeList
+- An HTMLCollection is always a live collection. 
+Example: If you add a <li> element to a list in the DOM, 
+the list in the HTMLCollection will also change.
+
+- A NodeList is most often a static collection. 
+Example: If you add a <li> element to a list in the DOM, 
+the list in NodeList will NOT change.
+
+otherwise, are very much the same thing.
+
+- Some (older) browsers return a NodeList object 
+instead of an HTMLCollection for methods like getElementsByClassName().
+- All browsers return a NodeList object for the property childNodes. 
+- Most browsers return a NodeList object for the method querySelectorAll().
