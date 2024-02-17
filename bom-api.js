@@ -38,3 +38,7 @@ window.location.protocol // =>  the web protocol used (http: or https:)
 window.location.assign("https://www.google.com") // loads a new document
 
 
+// The window.history object contains the browsers history.
+history.back() // same as clicking back in the browser
+history.forward() // same as clicking forward in the browser
+
