@@ -88,3 +88,31 @@ Navigating Between Nodes:
 <h1 id="id01">My First Page</h1>
 document.getElementById("demo").childNodes[0].nodeValue
 document.getElementById("id01").nodeName // => H1
+
+/* 
+
+Node	Type	Example
+ELEMENT_NODE	1	<h1 class="heading">W3Schools</h1>
+ATTRIBUTE_NODE	2	 class = "heading" (deprecated)
+TEXT_NODE	3	W3Schools
+COMMENT_NODE	8	<!-- This is a comment -->
+DOCUMENT_NODE	9	The HTML document itself (the parent of <html>)
+DOCUMENT_TYPE_NODE	10	<!Doctype HTML>
+
+*/
+
+// Creating New HTML Elements 
+const para = document.createElement("p")
+const node = document.createTextNode("This is a new paragraph.")
+para.appendChild(node)
+
+const element = document.getElementById("div1")
+const child = document.getElementById("p1")
+
+// variants on how to:
+element.appendChild(para)
+element.insertBefore(para, child)
+
+// removing elements
+// GOTCHA: remove() doesn't work in older browsers, use removeChild() instead.
+element.remove()
