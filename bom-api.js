@@ -30,7 +30,6 @@ screen.availHeight // => 771, the width of the visitor's screen (px) minus inter
 
 
 // Location
-
 window.location.href // => the href (URL) of the current page
 window.location.hostname // =>  the domain name of the web host
 window.location.pathname // =>  the path and filename of the current page
@@ -42,3 +41,15 @@ window.location.assign("https://www.google.com") // loads a new document
 history.back() // same as clicking back in the browser
 history.forward() // same as clicking forward in the browser
 
+
+// window.navigator
+navigator.cookieEnabled
+// GOTCHA: Do not rely on it. "Mozilla" is the application code name for Chrome, Firefox, IE, Safari, and Opera.
+navigator.appCodeName
+navigator.platform
+// can be misleading: the navigator data can be changed by the browser owner - or - some browsers misidentify themselves to bypass site tests
+navigator.userAgent
+navigator.appVersion
+navigator.language // => "en-GB"
+navigator.onLine
+navigator.javaEnabled()
