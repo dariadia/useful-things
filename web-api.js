@@ -27,3 +27,17 @@ function validate(inputID) {
   } else input.setCustomValidity("")
   input.reportValidity()
 }
+
+function validatePostCode(evt) {
+  let el=evt.target
+  if (el.validity) {
+    // HTML5 aware browsers
+  if (el.validity.patternMismatch) {
+    el.setCustomValidity('Not a valid UK Postal Code.eg:G1 1AA ');
+  } else el.setCustomValidity("")
+  } else {
+  // fallback for legacy browsers.
+  }
+}
+
+document.getElementById('txtPostcode').addEventListener('blur',validatePostCode,false)
