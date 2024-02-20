@@ -41,3 +41,25 @@ function validatePostCode(evt) {
 }
 
 document.getElementById('txtPostcode').addEventListener('blur',validatePostCode,false)
+
+
+
+// A web worker 
+// - is a JS running in the background, without affecting the performance of the page.
+let w
+
+function startWorker() {
+  if(typeof(w) == "undefined") {
+    w = new Worker("demo_workers.js")
+  }
+  w.onmessage = function(event) {
+    document.getElementById("result").innerHTML = event.data;
+  }
+}
+
+function stopWorker() { 
+  w.terminate()
+  w = undefined
+}
+w.terminate() // To terminate and free browser/computer resources, use this.
+w = undefined // if set to undefined, after it has been terminated, you can reuse the code.
