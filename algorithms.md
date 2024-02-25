@@ -8,7 +8,9 @@ for (let i = 2; i < nums.length + 2; i++) {
 }
 ```
 
-### DFS
+# Graphs
+
+## DFS
 
 ```
 function dfs(adj, visited, target) {
@@ -26,7 +28,7 @@ function dfs(adj, visited, target) {
 }
 ```
 
-### BFS
+## BFS
 
 ```
 function bfs(adj, start, target) {
