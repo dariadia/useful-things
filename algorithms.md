@@ -49,5 +49,12 @@ function bfs(adj, start, target) {
 }
 ```
 
+## Bellman–Ford 
+- slower than Dijkstra's
+- but more versatile (okay with negative edge weights)
 
+
+
+Time: O(nm), where n is the number of vertices in the graph and m is the number of edges.
+Space: O(n), as it only requires storing the shortest path estimates for each vertex.
 
