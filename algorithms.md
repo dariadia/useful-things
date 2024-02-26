@@ -52,9 +52,59 @@ function bfs(adj, start, target) {
 ## Bellman–Ford 
 - slower than Dijkstra's
 - but more versatile (okay with negative edge weights)
+Iterate 1->2->3 and for each calculate the distances from it to the others. If the distance is smaller, update the table. We do several passes, which helps us detect a negavite cycle.
 
+```
+function bellmanFord(graph, startVertex) {
+  const distances = {}
+  const previousVertices = {}
 
+  // Init all distances with infinity assuming that currently we can't reach
+  // any of the vertices except start one.
+  distances[startVertex.getKey()] = 0
+  graph.getAllVertices().forEach((vertex) => {
+    previousVertices[vertex.getKey()] = null
+    if (vertex.getKey() !== startVertex.getKey()) {
+      distances[vertex.getKey()] = Infinity
+    }
+  });
+
+  // We need (|V| - 1) iterations.
+  for (let iteration = 0; iteration < (graph.getAllVertices().length - 1); iteration += 1) {
+    // During each iteration go through all vertices.
+    Object.keys(distances).forEach((vertexKey) => {
+      const vertex = graph.getVertexByKey(vertexKey);
+
+      // Go through all vertex edges.
+      graph.getNeighbors(vertex).forEach((neighbor) => {
+        const edge = graph.findEdge(vertex, neighbor);
+        // Find out if the distance to the neighbor is shorter in this iteration
+        // then in previous one.
+        const distanceToVertex = distances[vertex.getKey()];
+        const distanceToNeighbor = distanceToVertex + edge.weight;
+        if (distanceToNeighbor < distances[neighbor.getKey()]) {
+          distances[neighbor.getKey()] = distanceToNeighbor;
+          previousVertices[neighbor.getKey()] = vertex;
+        }
+      });
+    });
+  }
+
+  return {
+    distances,
+    previousVertices,
+  }
+}
+```
 
 Time: O(nm), where n is the number of vertices in the graph and m is the number of edges.
 Space: O(n), as it only requires storing the shortest path estimates for each vertex.
 
+
+## Dijkstra
+- Fails to detect negative cycles.
+- Go from start->best neighbour->best neighbour till you reach the target.
+
+```
+
+```
